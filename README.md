@@ -15,6 +15,7 @@ console.log(`A subtração dos numeros é ${numero1 - numero2}`);
 console.log(`A multiplicacao dos ${numero1 * numero2} `);
 console.log(`A divisao dos numeros é ${numero1 / numero2} `);
 console.log(`O resto dos numeros é ${numero1 % numero2} `);
+console.log(`O número elevado a potencia do número2 é ${numero1 ** numaro2}`);
 
 ~~~~
 
@@ -62,3 +63,26 @@ console.log(`O número final é igual a ${numero }`);
 
 *`--` -> atribuição com **decremento 1** (pode ser *pré* ou *pós* decrementado).Ex: `numero ++` (pós-inscrimentado) ou `++ numero` (pré-incrementado).
 
+
+
+## operadores-comparacao.js
+
+Neste aquivvo conhecemos os operadores de comparação e a estrutura lógica de decisão **if-else**.
+
+~~~~js
+ if (condicao) {
+        console.log(`VERDADEIRO`)
+    } else {
+        console.log(`FALSO`)
+    }
+    ~~~~
+
+    Esta condicao exibe no console se a condição testada é `true` (verdadeira) ou ``
+    const a = 50, b = 50 = `A`;
+const condicao = a == b;
+~~~~
+
+## Operadores de comparação:
+
+* `==` -> é igual 
+* ``
