@@ -7,11 +7,13 @@
 </head>
 <body>
     <h1>Programinhas</h1>
+    <!--TODO -->
     <button type="button>" onclick="calculaIMC()" > calculadora IMC </button>
     <button type="button>"  onclick=" converteTemperatura()"> converteTemperatura </button>
      Temperatura</button>
      <h2>calculadora IMC</h2>
 
+     <form action=""id="fornIMC">
      <label for="peso">Peso:</label>
      <imput type="number" id="peso">
 
@@ -20,16 +22,29 @@
 
     <button type="=button">calcular IMC</button>
     <button type="reset">limpar</button>
+    
 
-
+    <div id="resultadoIMC"></div>
     <script src="desafio2.js"></script>
     <script src ="desafio3.js"></script>
     <script>
-        document.querySelector(`#btcalcIMC`).addEventListener(`click`),
+        document.querySelector(`#btlimpaIMC`).addEventListener(`click`),
         function() {
-            const peso = document.querySelector
+            const peso = document.querySelector(`#peso`).value;
+            const altura = document.querySelector('#altura').value;
+            const imc = calculaIMC(peso,altura);
+            console.log(imc)
         }
     </script>
+
+    <h2>Conversor de temperatura</h2>
+    <form action="">
+         <label for ='valorTemperatura'>Temperatura</label>
+         <imput type="number" id="valorTemperatura"
+
+         <label
+
+    </form>
 </body>
 </html>
 
