@@ -32,6 +32,28 @@ code -r <repositorio_local>/
 
 
 
+Limpar credenciais do sistema
+Limpar os dados do navegador
+Abrir meu repositorio no GitHub
+Copiar a Url do repositorio(HTTPS)
+Abrir Vs Code
+Se tiver algun projeto Aberto no Vs Code Feche! (CTRL + K F)
+Se houver algum usuario logado no Vs code, então clique em sair!
+Verifique as variaveis user.name e user.email globais:
+git config --global  user.name
+git config --global  user.email
+Se as variaveis retornarem algum valor, redefina ambas as variaveis:
+git config --global --unset user.name
+git config --global --unset user.email
+Faça a clonagem do repositorio no computador local:
+git clone https://github.com/<usuario>/<repositorio>.git
+Abra o projeto clonando no Vs code:
+code -r <repositorio_local>/
+Faça o login no Vs Code local para sincronizar suas exetenções e temas.
+Ative o salvamento automatico (AutoSave): Arquivo>Salvamento automático.
+clonar com 1 comando :
+git clone https://github.com/<usuario>/<repositorio>.git | code -r "e o nome do diretorio a ser aberto na sequencia"
+
 
 
 

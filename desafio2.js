@@ -4,26 +4,26 @@ function calculaIMC(){
     let mensagem;
          
     
-        window.prompt(`Digite o seu peso`)
+        
     
         
         if (imc < 18.5) {
-            console.log(`IMC: ${imc.toFixed(1)} -- Abaixo do peso`);
+            (mensagem=`IMC: ${imc.toFixed(1)} -- Abaixo do peso`);
         
         } else if (imc > 18.5 && imc < 25.0) {
-            console.log(`IMC: ${imc}-- Peso normal`);
+            (mensagem=`IMC: ${imc.toFixed(1)}-- Peso normal`);
         
         } else if (imc >= 25.0 && imc < 30.0){
-            console.log(`IMC: ${imc.toFive(1)} --Sobrepeso`);
+            (mensagem=`IMC: ${imc.toFive(1)} --Sobrepeso`);
        
         } else if (imc >=30 && imc < 35){
-        console.log(`IMC: ${imc.toFixed(1)} -- Obesidade grau I`);
+            (mensagem=`IMC: ${imc.toFixed(1)} -- Obesidade grau I`);
     
         } else if (imc >= 35 && imc < 40) {
-            console.log (`IMC: ${imc.toFixed(1)} -- Obesidade II`);
+            (mensagem=`IMC: ${imc.toFixed(1)} -- Obesidade II`);
     
         } else{
-            console.log(`IMC: ${imc.toFixed(1)} -- Obesidade grau III`);
+            (mensagem=`IMC: ${imc.toFixed(1)} -- Obesidade grau III`);
         }
 
              mensagem =``        	

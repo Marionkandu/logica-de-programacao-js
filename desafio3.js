@@ -1,39 +1,72 @@
-function converteTemperatura(){
+function converteTemperatura(temperaturaAtual, escalaAtual, escalaConversao) {
 
+    let temperaturaConvertida, msgErro = 'Ok';
+    
+    if (!isNaN(temperaturaAtual)) {
+    
+        escalaAtual = escalaAtual.toUpperCase();
+        escalaConversao = escalaConversao.toUpperCase();
+    
+        if (escalaAtual === 'C') {
+    
+            if (escalaConversao === 'K') {
+                temperaturaConvertida = temperaturaAtual + 273.15;
+    
+            } else if (escalaConversao === 'F') {
+                temperaturaConvertida = (temperaturaAtual * 9 / 5) + 32;
+    
+            } else if (escalaConversao === 'C') {
+                msgErro = `ERRO: Escala selecionada: ${escalaConversao}. Selecione uma escala de CONVERSÃO diferente da ATUAL.`;
+    
+            } else {
+                msgErro = `ERRO: Escala selecionada: ${escalaConversao}. Essa escala não existe ou não está disponível neste programa.`;
+            }
+    
+        } else if (escalaAtual === 'F') {
+    
+            if (escalaConversao === 'K') {
+                temperaturaConvertida = (temperaturaAtual + 459.67) * 5 / 9;
+    
+            } else if (escalaConversao === 'C') {
+                temperaturaConvertida = (temperaturaAtual - 32) * 5 / 9;
+    
+            } else if (escalaConversao === 'F') {
+                msgErro = `ERRO: Escala selecionada: ${escalaConversao}. Selecione uma escala de CONVERSÃO diferente da ATUAL.`;
+    
+            } else {
+                msgErro = `ERRO: Escala selecionada: ${escalaConversao}. Essa escala não existe ou não está disponível neste programa.`;
+            }
+    
+        } else if (escalaAtual === 'K') {
+    
+            if (escalaConversao === 'C') {
+                temperaturaConvertida = temperaturaAtual - 273.15;
+    
+            } else if (escalaConversao === 'F') {
+                temperaturaConvertida = temperaturaAtual * 9 / 5 - 459.67;
+    
+            } else if (escalaConversao === 'K') {
+                msgErro = `ERRO: Escala selecionada: ${escalaConversao}. Selecione uma escala de CONVERSÃO diferente da ATUAL.`;
+    
+            } else {
+                msgErro = `ERRO: Escala selecionada: ${escalaConversao}. Essa escala não existe ou não está disponível neste programa.`;
+            }
+    
+        } else {
+            msgErro = `ERRO: Escala ATUAL selecionada: ${escalaAtual}. A escala ATUAL não existe ou não está disponível neste programa.`;
+        }
+    
+    } else {
+        msgErro = 'ERRO: O número digitado para conversão não é um número válido.';
+    }
 
-
-    const  temperatura  = parseFloat( window.prompt(`Digite a temperatura:`)),
-      escala  = parseFloat( window.prompt(`Unidade atual C (Celsius), F (Fahrenheit) ou K (Kelvin )?`)),
-      conversao  = parseFloat( window.prompt(`Unidade desejada C (Celsius), F (Fahrenheit) ou K (Kelvin )? `));
-    
- 
-    
-    const  celsiusParaFahrenheit  =  ( temperatura  *  9/5 ) + 32, 
-      celsiusParaKelvin  =  temperatura  + 273.15 ,
-      fahrenheitParaCelsius  =  ( temperatura  - 32  ) * 5/9 ,​​  
-      fahrenheitParaKelvin  =  ( temperatura  +  459.67 )  *  5/9 ,
-      kelvinParaCelsius  =  temperatura  +  273.15 ,
-     kelvinParaFarenheit  =  (temperatura *1 )*9/5 - 459.67 ;​​  
-    
-    if  (temperatura ==`C` && conversao == `F` )  {​​​​   
-        calculo = celsiusParaFahrenheit.toFixed(2)
-        window.alert( `A temperatura correta é: ${ calculo } ºF` )
-    
-    }  else  if  (temperatura == `C`&& conversao == `K` ) {​​​​   
-        calculo = celsiusParaKelvin.toFixed(2)
-        window.alert ( `A temperatura correta é: ${ calculo } ºK` )
-    
-    }  else  if  ( temperatura == `F`  && conversao `C` ) {​​​​   
-        calculo = fahrenheitParaCelsius
-        window.alert ( `A temperatura correta é: ${ calculo } ºC` )
-    }  else  if  ( temperatura == `F` && conversao  `K` ) {​​​​  
-        calculo = fahrenheitParaKelvin
-        window.alert ( `A temperatura correta é: ${ calculo} ºK` )
-    }  else  if  ( temperatura ==  `K` && conversao == `C` ) {​​​​  
-        calculo = kelvinParaCelsius 
-        window.alert ( `A temperatura correta é: ${ calculo} ºC` )
-    }   
-
+    // retornando em JSON - JavaScript Object Notation
+    return {
+        temperaturaAtual: temperaturaAtual,
+        escalaAtual: escalaAtual,
+        escalaConversao: escalaConversao,
+        temperaturaConvertida: temperaturaConvertida,
+        msgErro: msgErro
+    }; 
 
 }
-
